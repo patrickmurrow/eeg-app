@@ -1,0 +1,62 @@
+Using OpenBCI from scratch
+
+Quote Terence Mayne:
+"	First we need the OpenBCI GUI from: http://openbci.com/index.php/downloads
+Which uses the Processing platform
+https://processing.org/download/?processing
+OpenBCI works on the older version of processing 2.21 and not 3.
+
+
+This GUI will enable you to get the port to be used in the Python code and check
+the hardware is working. If it's not being picked up you may need a new FTDI
+driver, http://www.ftdichip.com/Drivers/VCP.htm (I had to install this on my
+mac).
+
+The python code pulls in the raw EEG from the device, and opens a Lab Streaming
+Layer (LSL) Outlet which it broadcasts. 
+
+In the python code, the main program is openBCI_LSL_streamer.py
+The port has to be configured.. something like...
+port = '/dev/tty.usbserial-DB00JDI3'
+The number after tty. is likely to be different, but remained constant
+after that on my machine.
+
+The main class it relies on is "open_bci_v_ganglion.pyc" which has been tweaked a
+bit to use LSL.
+
+Also the python LSL library has been added which is in the path /lib
+There are other dependencies which may need to be installed see the
+requirements.txt file.
+
+The MATLAB code opens a LSL inlet which pulls the EEG into MATLAB and outputs it.
+Currently it picks up the first inlet it finds (but this can easily be changed to
+look for the OpenBCI stream). A MATLAB version of LSL will probably need to be
+installed.
+https://code.google.com/p/labstreaminglayer/source/browse/LSL/liblsl-Matlab/?r=c6e9924352bc3b278cdf5c65c537a232cd71a02b
+<https://code.google.com/p/labstreaminglayer/source/browse/LSL/liblsl-Matlab/?r=c6e9924352bc3b278cdf5c65c537a232cd71a02b>
+
+ 
+Other things to note:
+I find the battery can get flat after a couple hours use, and even though the LED
+is showing, it still need be charged for the computer to detect it.
+The bluetooth setting on the BCI I use is 'PC', I've briefly tried the
+'bluetooth' option without the dongle which didn't work.
+The BCI sometimes isn't picked up, in which case I switch the BCI off, unplug and
+replug the USB bluetooth, and switch it on again, after which it works well. 
+The Processing GUI needs to be stopped for the python MATLAB LSL streams to work. "
+
+
+The above extraction is all done with python.
+
+OpenBCIParser and OpenBCISerial are c++ files that do the same job but work better
+with the QtGui and c files.
+
+Step by step to get this displaying:
+
+- Put the usb dongle into a usb port on GPIO_6 setting
+- Find the usb port to be used through the same process as above
+- Replace the MODEMDEVICE variable in openBCIHS and openBCISerial with this port
+- "make" the project
+- Turn the headset onto PC mode
+- Run the display with ./build/eeg-gui - f
+  - put the clips on your ears and sensors on your head, adjust speed/filters/num of channels

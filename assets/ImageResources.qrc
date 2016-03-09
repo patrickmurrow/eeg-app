@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/ButtonIcons">
+        <file>btnFatigue.png</file>
+        <file>btnDrone.png</file>
+        <file>btnDepression.png</file>
+        <file>btnSettings.png</file>
+        <file>btnCalibration.png</file>
+        <file>btnApplications.png</file>
+        <file>btnSearch.png</file>
+        <file>btnConnect.png</file>
+        <file>btnCancel.png</file>
+        <file>btnBegin.png</file>
+        <file>btnBack.png</file>
+        <file>loading.gif</file>
+        <file>tick.png</file>
+        <file>white-arrow-down.png</file>
+    </qresource>
+</RCC>

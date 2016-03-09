@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#Connects this device to a bluetooth device and creates a serial
+#port connection.
+
+#Expected paramters: serial_path bluetooth_address, channel
+
+while :
+do
+    #sdptool add --channel=6 SP
+    #rfcomm connect /dev/rfcomm0 8C:DE:52:12:7D:8E 6
+    #rfcomm release /dev/rfcomm0
+    sdptool add --channel=$3 SP
+    rfcomm connect $1 $2 $3
+    rfcomm release $1
+done

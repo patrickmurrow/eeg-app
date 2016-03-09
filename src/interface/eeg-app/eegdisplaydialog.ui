@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EEGDisplayDialog</class>
+ <widget class="QDialog" name="EEGDisplayDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1333</width>
+    <height>604</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QSlider" name="hs2_2">
+   <property name="geometry">
+    <rect>
+     <x>-160</x>
+     <y>40</y>
+     <width>1611</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Raw EEG&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>10</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Notch:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbNotch">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>10</y>
+     <width>125</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+    min-width: 6em;
+	selection-background-color: #CCCCCC;
+	selection-color: #2E2E2E;
+	color: white;
+}
+
+QComboBox:editable {
+    background: black;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #666666;
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+     background: #666666;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+	background-color: yellow;
+    padding-top: 10px;
+    padding-left: 11px;
+}
+
+QComboBox::drop-down {
+	background-color: #404040;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 2px;
+    border-left-color: #2E2E2E;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(assets/arrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QListView
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2E2E2E;
+    background-color: #666666;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>No Notch</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>60 Hz</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>50 Hz</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>10</y>
+     <width>69</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bandpass:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbBandpass">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>10</y>
+     <width>127</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+    min-width: 6em;
+	selection-background-color: #CCCCCC;
+	selection-color: #2E2E2E;
+	color: white;
+}
+
+QComboBox:editable {
+    background: black;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #666666;
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+     background: #666666;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+	background-color: yellow;
+    padding-top: 10px;
+    padding-left: 11px;
+}
+
+QComboBox::drop-down {
+	background-color: #404040;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 2px;
+    border-left-color: #2E2E2E;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(assets/arrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QListView
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2E2E2E;
+    background-color: #666666;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>No BP Filter</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1-50 Hz</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7-13 Hz</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>15-50 Hz</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5-50 Hz</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cmbChannels">
+   <property name="geometry">
+    <rect>
+     <x>592</x>
+     <y>10</y>
+     <width>61</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+	selection-background-color: #CCCCCC;
+	selection-color: #2E2E2E;
+	color: white;
+}
+
+QComboBox:editable {
+    background: black;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #666666;
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+     background: #666666;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+	background-color: yellow;
+    padding-top: 10px;
+    padding-left: 11px;
+}
+
+QComboBox::drop-down {
+	background-color: #404040;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 2px;
+    border-left-color: #2E2E2E;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(assets/arrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QListView
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2E2E2E;
+    background-color: #666666;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>8</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>10</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Channels:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnStart">
+   <property name="geometry">
+    <rect>
+     <x>1102</x>
+     <y>10</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: 3px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+	color: white;
+   background-color: #666666;
+	border-style: outset;
+}
+
+QPushButton:pressed
+{
+border-style:solid;
+border-width:1px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnStop">
+   <property name="geometry">
+    <rect>
+     <x>1210</x>
+     <y>10</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border: 3px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+	color: white;
+   background-color: #666666;
+	border-style: outset;
+}
+
+QPushButton:pressed
+{
+border-style:solid;
+border-width:1px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cmbSpeed">
+   <property name="geometry">
+    <rect>
+     <x>422</x>
+     <y>10</y>
+     <width>61</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+    border: 2px solid #2E2E2E;
+    border-radius: 5px;
+    padding: 0px 0px 0px 3px;
+	selection-background-color: #CCCCCC;
+	selection-color: #2E2E2E;
+	color: white;
+}
+
+QComboBox:editable {
+    background: black;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #666666;
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+     background: #666666;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+	background-color: yellow;
+    padding-top: 10px;
+    padding-left: 11px;
+}
+
+QComboBox::drop-down {
+	background-color: #404040;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 2px;
+    border-left-color: #2E2E2E;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {
+    image: url(assets/arrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QListView
+{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #2E2E2E;
+    background-color: #666666;
+}</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.5</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0.8</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1.2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1.5</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>10</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Speed:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

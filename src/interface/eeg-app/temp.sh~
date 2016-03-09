@@ -1,0 +1,2 @@
+#!/bin/bash
+exec java ./home/patrick/Documents/eeg-gui/src/interface/eeg-app/RobotJump

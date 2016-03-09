@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsWindow</class>
+ <widget class="QWidget" name="SettingsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>952</width>
+    <height>584</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btnSearch">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>99</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnSearch.png</normaloff>:/ButtonIcons/btnSearch.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>90</width>
+     <height>90</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>0</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu Condensed</family>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnConnect">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>80</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnConnect.png</normaloff>:/ButtonIcons/btnConnect.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>102</width>
+     <height>80</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hs2">
+   <property name="geometry">
+    <rect>
+     <x>-160</x>
+     <y>120</y>
+     <width>1251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hs1">
+   <property name="geometry">
+    <rect>
+     <x>-110</x>
+     <y>50</y>
+     <width>1251</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hs3">
+   <property name="geometry">
+    <rect>
+     <x>-50</x>
+     <y>490</y>
+     <width>1251</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>520</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnBack.png</normaloff>:/ButtonIcons/btnBack.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loading">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>80</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../../assets/ImageResources.qrc">:/ButtonIcons/loading.gif</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="lstDevices">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>901</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView {
+    show-decoration-selected: 1;
+	font: 14pt &quot;Ubuntu&quot;;
+}
+
+QListWidget::item { 
+	border: 1px solid gray;
+	margin: 0 0 6px 0;s
+
+ }
+
+QListView::item:alternate {
+    background: #EEEEEE;
+}
+
+QListView::item:selected {
+    border: 1px solid #2e2e2e;
+}
+
+QListView::item:selected:!active {
+    background: #636465;
+}
+
+QListView::item:selected:active {
+    background: #636465;
+}
+
+QListView::item:hover {
+    background:  #CBCCCB;
+}
+ 
+ QListView::item:hover {
+     backgrouQSlider::groove:horizontal {
+    border: 1px solid #999999;
+    height: 4px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #c4c4c4);
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #b4b4b4, stop:1 #8f8f8f);
+    border: 1px solid #5c5c5c;
+    width: 18px;
+    margin: -2px 0; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 3px;
+}nd:  #CBCCCB;
+     border: 1px solid #9B9C9B;
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblTick">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>170</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../../assets/ImageResources.qrc">:/ButtonIcons/tick.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>btnConnect</zorder>
+  <zorder>btnSearch</zorder>
+  <zorder>label</zorder>
+  <zorder>hs2</zorder>
+  <zorder>hs1</zorder>
+  <zorder>hs3</zorder>
+  <zorder>btnBack</zorder>
+  <zorder>loading</zorder>
+  <zorder>lstDevices</zorder>
+  <zorder>lblTick</zorder>
+ </widget>
+ <resources>
+  <include location="../../../assets/ImageResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

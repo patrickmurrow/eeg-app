@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+emacs src/interface/*.* src/eeg/*.* src/eeg/brainlink/*.* src/eeg/muse/*.* src/*/*/*.* src/*/*.* &

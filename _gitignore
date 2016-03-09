@@ -1,0 +1,12 @@
+#*
+*#
+.#*
+*.o
+Makefile
+EEG-GUI
+*~
+moc_*
+raweeg
+markindex
+EEG-GUI
+eeg-gui

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#Changes the permission of necessary programs to allow for bluetooth connection
+
+sudo chown root:root connect2Bluetooth
+sudo chmod u+s connect2Bluetooth 
+sudo chmod u+s /usr/bin/rfcomm 

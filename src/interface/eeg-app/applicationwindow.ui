@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApplicationWindow</class>
+ <widget class="QWidget" name="ApplicationWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>794</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="btnDepression">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>231</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnDepression.png</normaloff>:/ButtonIcons/btnDepression.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>220</width>
+     <height>220</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnDrone">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>100</y>
+     <width>231</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnDrone.png</normaloff>:/ButtonIcons/btnDrone.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>220</width>
+     <height>220</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnFatigue">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>100</y>
+     <width>231</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnFatigue.png</normaloff>:/ButtonIcons/btnFatigue.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>220</width>
+     <height>220</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu Condensed</family>
+     <pointsize>26</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Applications</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBack">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>380</y>
+     <width>99</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../../../assets/ImageResources.qrc">
+     <normaloff>:/ButtonIcons/btnBack.png</normaloff>:/ButtonIcons/btnBack.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hs1">
+   <property name="geometry">
+    <rect>
+     <x>-71</x>
+     <y>60</y>
+     <width>971</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="hs2">
+   <property name="geometry">
+    <rect>
+     <x>-130</x>
+     <y>350</y>
+     <width>971</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:horizontal {
+    border: 0.5px solid #B2B2B2;
+    height: 5px; /* the groove expands to the size of the slider by default. by giving it a height, it has a fixed size */
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #636465, stop:1 #D5D6D5);
+    margin: 2px 0;
+}
+</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../assets/ImageResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
